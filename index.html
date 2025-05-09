@@ -1,0 +1,963 @@
+<!--project by: @tubavoque @irl_yawn @rinnohara_x on X/twitter -->
+<!-- member images designed by: @snoozyboobie on X/twitter -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TXT Love Virus 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+ body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.button-yo {
+  width: 160px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button-yo img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
+.button-yo:hover {
+  transform: scale(1.1);
+}
+
+.heart-buttons-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+}
+
+.heart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.heart-button img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+    display: block;
+}
+
+.heart-button:hover img {
+    transform: scale(1.1);
+}
+
+.icon-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.icon-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.center-heart {
+  margin: 0 60px;
+}
+
+
+    .popup {
+      position: fixed;
+      z-index: 999;
+      display: none;
+      background-color: transparent;
+      padding: 0;
+      max-width: 90%;
+      max-height: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 0;
+      display: block;
+      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .bg{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .final-popupphone {
+      position: fixed;
+      z-index: 9000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width:700px;
+      height:auto;
+      background: none;
+      border: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .final-popup {
+      position: fixed;
+      z-index: 9000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width:350px;
+      height:auto;
+      background: none;
+      border: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .popup-content {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+
+    .popup-content img.bg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hotspot-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; 
+    }
+
+    .popup-btnphone {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background: none;
+      border: none;
+      color: #ff0201;
+      font-family: 'Anton', sans-serif;
+      font-size: 2em;
+      cursor: pointer;
+      padding: 0;
+      pointer-events: auto;
+      transition: color 0.2s ease, transform 0.2s ease;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .popup-btn {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background: none;
+      border: none;
+      color: #ff0201;
+      font-family: 'Anton', sans-serif;
+      font-size: 0.95em;
+      cursor: pointer;
+      padding: 0;
+      pointer-events: auto;
+      transition: color 0.2s ease, transform 0.2s ease;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .antibttn {
+      position: absolute;
+      background: none;
+      border: none;
+      width: 200px;
+      height: auto;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+
+    .antibttn img {
+      width: 100px;
+      max-width: 100%;
+      height: auto;
+      box-shadow: none;
+      filter: drop-shadow(0 0 15px rgba(255, 0, 150, 0.8));;
+      display: inline-block
+    }
+
+    .antitest {
+      position: fixed;
+      z-index: 100002;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width:270px;
+      height:auto;
+      background: none;
+      border: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .antibttnphone {
+      position: absolute;
+      background: none;
+      border: none;
+      width: 200px;
+      height: auto;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+
+    .antibttnphone img {
+      width: 250px;
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .antitestphone {
+      position: relative;
+      z-index: 100002;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width:450px;
+      height:auto;
+      background: none;
+      border: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .popup-btn:hover {
+      color: #ff80bf;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .popup-btnphone:hover {
+      color: #ff80bf;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    @keyframes glitchy {
+      0% { transform: translate(0); filter: none; }
+      20% { transform: translate(-2px, 2px); filter: hue-rotate(15deg); }
+      40% { transform: translate(2px, -1px); filter: hue-rotate(-15deg); }
+      60% { transform: translate(-1px, 1px); filter: hue-rotate(20deg); }
+      80% { transform: translate(1px, -2px); filter: hue-rotate(-20deg); }
+      100% { transform: translate(0); filter: none; }
+    }
+
+    .glitch {
+      animation: glitchy 0.3s linear;
+    }
+
+    #memberPopup {
+      position: fixed;
+      z-index: 9998;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      pointer-events: none;
+    }
+
+    #memberPopup img {
+      max-width: 600px;
+      height: auto;
+      animation: fadeIn 0.4s ease-in-out;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+
+    #memberPopupphone {
+      position: fixed;
+      z-index: 9998;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      pointer-events: none;
+    }
+
+    #memberPopupphone img {
+      max-width: 600px;
+      height: auto;
+      animation: fadeIn 0.4s ease-in-out;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .glitch-final {
+      animation: glitchy 0.3s linear infinite;
+    }
+
+    @keyframes blackout-glitch {
+      0% { opacity: 0; transform: none; filter: none; }
+      20% { opacity: 1; transform: scale(1.02) skewX(-2deg); filter: contrast(200%) hue-rotate(20deg); }
+      40% { transform: scale(0.98) skewX(2deg); filter: brightness(1.3); }
+      60% { transform: scale(1.03) skewX(-1deg); filter: hue-rotate(-20deg); }
+      80% { transform: scale(1) skewX(1deg); }
+      100% { transform: none; opacity: 1; filter: none; }
+    }
+
+    .blackout-glitch {
+      animation: blackout-glitch 0.7s linear forwards;
+    }
+
+    .top-controls{
+      position: fixed;
+      top: 2%;
+      right: 2%;
+      zIndex: 99999;
+    }
+
+    #muteicon{
+      width: 50px;
+      height: auto;
+      transition: transform 0.2s ease;
+    }
+
+    #mutebtn{
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    #mutebtn:hover #muteicon{
+      transform: scale(1.1);
+    }
+
+    @keyframes glitchText {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+      10% { opacity: 1; transform: translate(-50%, -52%) scale(1.05) skewX(-2deg); }
+      20% { transform: translate(-50%, -48%) scale(0.95) skewX(1deg); }
+      40% { transform: translate(-50%, -50%) scale(1.1); }
+      60% { opacity: 1; }
+      80% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
+      100% { opacity: 0; }
+    }
+
+
+    @keyframes fadeInGlitch {
+        0%   { opacity: 0; }
+        20%  { opacity: 0.15; }  
+        40%  { opacity: 0.30; } 
+        60%  { opacity: 0.50; } 
+        80%  { opacity: 0.75; } 
+        100% { opacity: 1; }
+    }
+
+    @keyframes twitch {
+      0% { transform: translate(0, 0); }
+      10% { transform: translate(-2px, 1px); }
+      20% { transform: translate(2px, -1px); }
+      30% { transform: translate(-1px, -1px); }
+      40% { transform: translate(1px, 1px); }
+      50% { transform: translate(0, 2px); }
+      60% { transform: translate(-1px, 0); }
+      70% { transform: translate(2px, 1px); }
+      80% { transform: translate(-2px, -2px); }
+      90% { transform: translate(1px, -1px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .download-popupphone {
+      position: fixed;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 2px solid #000;
+      padding: 15px 20px;
+      width: 500px;
+      font-family: monospace;
+      font-size: 30px;
+      z-index: 100000;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .download-popup {
+      position: fixed;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 2px solid #000;
+      padding: 15px 20px;
+      width: 300px;
+      font-family: monospace;
+      font-size: 14px;
+      z-index: 100000;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    }
+
+    #fixHeartPopup {
+      z-index: 100002 !important;
+    }
+
+    .download-bar .progress {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #0f0, #6f6);
+      animation: fillBar 3s forwards;
+    }
+
+    .download-bar {
+      width: 100%;
+      height: 15px;
+      background: #ddd;
+      margin-top: 10px;
+      overflow: hidden;
+      border: 1px solid #000;
+    }
+
+    .download-barphone {
+      width: 100%;
+      height: 20px;
+      background: #ddd;
+      margin-top: 10px;
+      overflow: hidden;
+      border: 1px solid #000;
+    }
+
+    .download-barphone .progress {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #0f0, #6f6);
+      animation: fillBar 3s forwards;
+    }
+
+    @keyframes fillBar {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    @keyframes fillBar22 {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    .progress.short-bar {
+      animation: fillBar 3s forwards;
+    }
+
+    .progress.long-bar {
+      animation: fillBar22 22s linear forwards;
+    }
+
+    .progress.short-barphone {
+      animation: fillBar 3s forwards;
+    }
+
+    .progress.long-barphone {
+      animation: fillBar22 22s linear forwards;
+    }
+
+    .download-popup{
+      z-index: 400;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="icon-layout">
+  <div class="icon-column">
+    <div class="button-yo"><img src="love-crash.exe.png" onclick="window.location.href='https://youtu.be/1T9tLMh99Wo?si=9ppyQWVrJDWy3Fqg'"></div>
+    <div class="button-yo"><img src="ex.png" onclick="window.location.href='https://youtu.be/LHVxjfNQlr0?si=AbHsmjE_y1rrQY4w'"></div>
+    <div class="button-yo"><img src="reply_finalFINAL.txt.png" onclick="window.location.href='https://youtu.be/9hTpDHJmjC0?si=qg53OmtQYBmTWvhb'"></div>
+  </div>
+
+  <div class="center-heart">
+    <button class="heart-button"><img src="heart.png" onclick="openModal()"></button>
+  </div>
+
+  <div class="icon-column">
+    <div class="button-yo"><img src="emodrive.png" onclick="window.location.href='https://youtu.be/WdhEVetHVE8?si=XbIoti1EOKU0zjVH'"></div>
+    <div class="button-yo"><img src="heartfixinstaller.png" onclick="window.location.href='https://youtu.be/KpmSTVUUQY0?si=ZWZiQpfrRbd0_JMu'"></div>
+    <div class="button-yo"><img src="unrequited.png" onclick="window.location.href='https://ibighit.com/txt/eng/'"></div>
+  </div>
+</div>
+
+  <video id="moodTeaser" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100000;" width="1000" autoplay>
+    <source src="moodteaser.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <video id="moodTeaserphone" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100000;" width="100%" autoplay>
+    <source src="moodteaser.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="download-popup" id="downloadPopup" style="display: none;">
+    <p>Downloading Love.exe...</p>
+    <div class="download-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <div id="blackout" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;">
+  </div>
+
+  <div class="download-popup" id="fixHeartPopup" style="display: none;">
+    <p>Anti-virus ready. Fixing your heart...</p>
+    <div class="download-bar">
+      <div class="progress short-bar"></div>
+      <div class="progress long-bar" style="display: none;"></div>
+    </div>
+  </div>
+
+  <div class="download-popupphone" id="fixHeartPopupphone" style="display: none;">
+    <p>Anti-virus ready. Fixing your heart...</p>
+    <div class="download-barphone">
+      <div class="progress short-barphone"></div>
+      <div class="progress long-barphone" style="display: none;"></div>
+    </div>
+  </div>
+
+  <div id="memberPopup" style="display: none;">
+    <img id="memberImage" src="" />
+  </div>
+
+  <div id="memberPopupphone" style="display: none;">
+    <img id="memberImagephone" src="" />
+  </div>
+
+  <div id="universalPopup" class="popup" style="display: none;">
+    <img id="popupImage" src="" />
+  </div>
+
+  <div id="antivirusteste" class="antitest" style="display:none;">
+    <div class="antianti">
+      <img id="antiImageteste" src="antivirus.png" class="bg" />
+      <div class="hotvirus-container">
+          <button class="antibttn"><img src="antivirusbttn.png" onclick="window.location.href='https://www.youtube.com/watch?v=8aRTMQvbODs'"></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="antivirustestephone" class="antitestphone" style="display:none;">
+    <div class="popup-content">
+      <img id="antiImageteste" src="antivirus.png" class="bg" />
+      <div class="hotvirus-container">
+          <button class="antibttnphone"><img src="antivirusbttn.png" onclick="window.location.href='https://www.youtube.com/watch?v=8aRTMQvbODs'"></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="finalPopupphone" class="final-popupphone" style="display:none;">
+    <div class="popup-content">
+      <img id="finalpopipphone" src="finalpopip.png" class="bg" />
+      <div class="hotspot-container">
+          <button class= "popup-btnphone" style="bottom:6%; left:30%;" onclick="respondPopup('pt')">PHYSICAL TOUCH</button>
+          <button class= "popup-btnphone" style="bottom:6%; left:70%;" onclick="respondPopup('as')">ACTS OF SERVICE</button>
+          <button class= "popup-btnphone" style="bottom:20%; left:30%;" onclick="respondPopup('qt')">QUALITY TIME</button>
+          <button class= "popup-btnphone" style="bottom:13%; left:50%;" onclick="respondPopup('wa')">WORDS OF AFFIRMATION</button>
+          <button class= "popup-btnphone" style="bottom:20%; left:70%;" onclick="respondPopup('rg')">RECEIVING GIFTS</button>
+      </div>
+      <img id="reactionImage" src="" style="display:none; margin-top: 10px; width: 316px;">
+    </div>
+  </div>
+
+  <div id="finalPopup" class="final-popup" style="display:none;">
+    <div class="popup-content">
+      <img id="finalpopip" src="finalpopip.png" class="bg" />
+      <div class="hotspot-container">
+          <button class= "popup-btn" style="bottom:6%; left:30%;" onclick="respondPopup('pt')">PHYSICAL TOUCH</button>
+          <button class= "popup-btn" style="bottom:6%; left:70%;" onclick="respondPopup('as')">ACTS OF SERVICE</button>
+          <button class= "popup-btn" style="bottom:20%; left:30%;" onclick="respondPopup('qt')">QUALITY TIME</button>
+          <button class= "popup-btn" style="bottom:13%; left:50%;" onclick="respondPopup('wa')">WORDS OF AFFIRMATION</button>
+          <button class= "popup-btn" style="bottom:20%; left:70%;" onclick="respondPopup('rg')">RECEIVING GIFTS</button>
+      </div>
+      <img id="reactionImage" src="" style="display:none; margin-top: 10px; width: 200px;">
+    </div>
+  </div>
+
+  <div class="top-controls">
+    <button id="mutebtn">
+      <img id="muteicon" src="" alt="Mute Button" />
+    </button>
+  </div>
+
+  <script>
+
+    function spawnPopup(options) {
+      const template = document.getElementById("universalPopup");
+      const clone = template.cloneNode(true);
+      clone.id = "";
+      if (options.zIndex) {
+        clone.style.zIndex = options.zIndex;
+      }
+      const img = clone.querySelector("img");
+      img.src = options.src;
+      img.style.width = options.width || "300px";
+
+      clone.style.top = options.top || "auto";
+      clone.style.left = options.left || "auto";
+      clone.style.bottom = options.bottom || "auto";
+      clone.style.right = options.right || "auto";
+      clone.style.display = "flex";
+
+      document.body.appendChild(clone);
+
+      const glitchLoop = setInterval(() => {
+        if (Math.random() < 0.37) {
+          img.classList.add("glitch");
+          setTimeout(() => {
+            img.classList.remove("glitch");
+          }, 300);
+        }
+      }, 1000 + Math.random() * 2000);
+
+      if (options.duration) {
+        setTimeout(() => {
+          clearInterval(glitchLoop);
+          document.body.removeChild(clone);
+        }, options.duration);
+      }
+    }
+    function openFinalPopup() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      if(width > height){
+        document.getElementById("finalPopup").style.display = "block";
+      }
+      else{
+        document.getElementById("finalPopupphone").style.display = "block";
+      }
+    } 
+    function openantivirus() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      if(width > height){
+        //document.getElementById("antivirus").style.display = "block";
+        document.getElementById("antivirusteste").style.display = "block";
+      }
+      else{
+        //document.getElementById("antivirusphone").style.display = "block";
+        document.getElementById("antivirustestephone").style.display = "block";
+      }
+    }
+    function respondPopup(answer) {
+      const memberPopup = document.getElementById("memberPopup");
+      const memberImage = document.getElementById("memberImage");
+
+      if (answer == "pt") memberImage.src = "hk.jpg";
+      if (answer == "wa") memberImage.src = "th.jpg";
+      if (answer == "as") memberImage.src = "sb.jpg";
+      if (answer == "rg") memberImage.src = "yj.jpg";
+      if (answer == "qt") memberImage.src = "bg.jpg";
+
+
+      memberImage.classList.add("glitch-text");
+      memberPopup.style.display = "block";
+
+      setTimeout(() => {
+        for (let i = 0; i < 35; i++) {
+          setTimeout(() => {
+            const randomTop = Math.floor(Math.random() * 80) + 10; 
+            const randomLeft = Math.floor(Math.random() * 80) + 10;
+            const randomWidth = Math.floor(Math.random() * 150) + 150;
+            spawnPopup({
+              src: "finalerror.png",
+              width: `${randomWidth}px`,
+              top: `${randomTop}%`,
+              left: `${randomLeft}%`,
+              zIndex: 10000
+            });
+          }, i * 150); 
+        }
+      }, 3000);
+      setTimeout(() => {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        let teaser;
+        let fixPopup;
+        let shortBar;
+        let longBar;
+        if(width > height){
+          teaser = document.getElementById("moodTeaser");
+          fixPopup = document.getElementById("fixHeartPopup");
+          shortBar = fixPopup.querySelector(".short-bar");
+          longBar = fixPopup.querySelector(".long-bar");
+        }
+        else{
+          teaser = document.getElementById("moodTeaserphone");
+          fixPopup = document.getElementById("fixHeartPopupphone");
+          shortBar = fixPopup.querySelector(".short-barphone");
+          longBar = fixPopup.querySelector(".long-barphone");
+        }
+
+        shortBar.style.display = "none";
+        longBar.style.display = "block";
+        longBar.classList.remove("long-barphone"); 
+        void longBar.offsetWidth; 
+        longBar.classList.add("long-barphone");
+
+        teaser.style.display = "block";
+        teaser.play();
+        fixPopup.style.display = "block";
+
+        const onComplete = () => {
+          teaser.style.display = "none";
+          fixPopup.style.display = "none";
+          shortBar.style.display = "block";
+          longBar.style.display = "none";
+
+          const blackout = document.getElementById("blackout");
+          blackout.classList.add("blackout-glitch");
+          blackout.style.opacity = "1";
+
+          setTimeout(() => {
+            blackout.classList.remove("blackout-glitch");
+            blackout.style.opacity = "0";
+            document.getElementById("memberPopup").style.display = "none";
+            closeAllPopups();
+            openantivirus();
+            setTimeout(() => {
+              document.getElementById("antivirus").style.display = "none";
+              document.getElementById("antivirusphone").style.display = "none";
+            }, 3000);
+          }, 2000);
+        };
+        teaser.addEventListener("ended", onComplete);
+        setTimeout(onComplete, 22000);
+      }, 5000);
+    }
+    function closeAllPopups() {
+      document.querySelectorAll('.popup, .phone, .bee, .error, .final-popup, .final-popupphone, .antipopup').forEach(el => {
+        el.style.display = "none";
+      });
+    }
+    function openModal() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      //             Phone     Bee Grey/Pink   Popup   Vertical Connection Toast
+      horizontal = ["410px", "450px", "200px", "320px", "70px", "290px", "250px"];
+      vertical = ["650px", "650px", "316px", "506px", "111px", "458px", "395px"];
+      if(width > height){
+        final = horizontal;
+      }
+      else{
+        final = vertical;
+      }
+      const popup = document.createElement('div');
+      popup.innerHTML = `
+        <p>Downloading Love_Virus.exe...</p>
+        <div class="download-bar"><div class="progress"></div></div>`;
+        if(width > height){
+          popup.classList.add('download-popup');
+        }
+        else{
+          popup.classList.add('download-popupphone');
+        }
+      document.body.appendChild(popup);
+      // Phone
+      setTimeout(() => {
+        spawnPopup({
+          src: "finalphone.png",
+          width: final[0],
+          top: "5%",
+          left: "5%"
+        });
+      }, 1325);
+      // Bee
+      setTimeout(() => {
+        spawnPopup({
+          src: "finalbee.png",
+          width: final[1],
+          bottom: "5%",
+          right: "5%"
+        });
+      }, 1450);
+      //Grey Error
+      setTimeout(() => {
+        spawnPopup({
+          src: "errorgrey.png",
+          width: final[2],
+          top: "30%",
+          right: "30%"
+        });
+      }, 1575);
+      //Grey Error
+      setTimeout(() => {
+        spawnPopup({
+          src: "errorgrey.png",
+          width: final[2],
+          top: "70%",
+          right: "50%"
+        });
+      }, 1700);
+      //Pink Error
+      setTimeout(() => {
+        spawnPopup({
+          src: "errorpink.png",
+          width: final[2],
+          top: "60%",
+          left: "30%"
+        });
+      }, 1825);
+      // Pink Error
+      setTimeout(() => {
+        spawnPopup({
+          src: "errorpink.png",
+          width: final[2],
+          top: "40%",
+          right: "20%"
+        });
+      }, 1950);
+      // Pop up
+      setTimeout(() => {
+        spawnPopup({
+          src: "popup.png",
+          width: final[3],
+          top: "45%",
+          left: "15%"
+        });
+      }, 2075);
+      // Vertical Input
+      setTimeout(() => {
+        spawnPopup({
+          src: "inputheart.png",
+          width: final[4],
+          top: "10%",
+          left: "3%"
+        });
+      }, 2130);
+      // Another Grey Error
+      setTimeout(() => {
+        spawnPopup({
+          src: "errorgrey.png",
+          width: final[2],
+          top: "10%",
+          left: "85%"
+        });
+      }, 1956);
+      //Connection
+      setTimeout(() => {
+        spawnPopup({
+          src: "connection.png",
+          width: final[5],
+          top: "10%",
+          left: "58%"
+        });
+      }, 2170);
+      // 2 more errors
+      setTimeout(() => {
+        spawnPopup({
+          src: "errorpink.png",
+          width: final[2],
+          top: "75%",
+          left: "7%"
+        });
+      }, 2200);
+      setTimeout(() => {
+        spawnPopup({
+          src: "errorgrey.png",
+          width: final[2],
+          top: "22%",
+          left: "27%"
+        });
+      }, 2260);
+      // Another pop up
+      setTimeout(() => {
+        spawnPopup({
+          src: "toast.png",
+          width: final[6],
+          top: "56%",
+          left: "77%"
+        });
+      }, 2300);
+      // Last Error
+      setTimeout(() => {
+        spawnPopup({
+          src: "errorgrey.png",
+          width: final[2],
+          top: "16%",
+          left: "63%"
+        });
+      }, 2350);
+      // Open last popup
+      setTimeout(() => {
+        openFinalPopup();
+      }, 2400);
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2400);
+    }
+    
+    const muteBtn = document.getElementById("mutebtn");
+    const muteIcon = document.getElementById("muteicon");
+    /*
+    const bgMusic = document.getElementById("bgAudio");
+    bgMusic.loop = true;
+    bgMusic.volume = 50;
+    bgMusic.play();*/
+
+    const characters = [
+      { on: "yeongmeong.png", mute: "meongmute.png" },
+      { on: "hwangchoon.png", mute: "hwangmute.png" },
+      { on: "bamgeut.png", mute: "bamgmute.png" },
+      { on: "dagonyang.png", mute: "dagonmute.png" },
+      { on: "hmmnayring.png", mute: "ringmute.png" }
+    ];
+
+    const chosenChar = characters[Math.floor(Math.random() * characters.length)];
+    let isMuted = false;
+
+    muteIcon.src = chosenChar.on;
+
+    muteBtn.addEventListener("click", () => {
+      isMuted = !isMuted;
+      bgMusic.muted = isMuted;
+      muteIcon.src = isMuted ? chosenChar.mute : chosenChar.on;
+    });
+
+  </script>
+</body>
+</html>
+
