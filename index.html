@@ -15,7 +15,6 @@
 }
 
 body {
-  background-image: url('background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -213,9 +212,7 @@ body {
       width: 100px;
       max-width: 100%;
       height: auto;
-      box-shadow: none;
-      filter: drop-shadow(0 0 15px rgba(255, 0, 150, 0.8));;
-      display: inline-block
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     }
 
     .antitest {
@@ -509,16 +506,16 @@ body {
   <div class="icon-column">
     <div class="button-yo"><img src="emodrive.png" onclick="window.location.href='https://youtu.be/WdhEVetHVE8?si=XbIoti1EOKU0zjVH'"></div>
     <div class="button-yo"><img src="heartfixinstaller.png" onclick="window.location.href='https://youtu.be/KpmSTVUUQY0?si=ZWZiQpfrRbd0_JMu'"></div>
-    <div class="button-yo"><img src="unrequited.png" onclick="window.location.href='https://ibighit.com/txt/eng/'"></div>
+    <div class="button-yo"><img src="unrequited.png" onclick="window.location.href='https://www.youtube.com/watch?v=8aRTMQvbODs'"></div>
   </div>
 </div>
 
-  <video id="moodTeaser" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100000;" width="1000" autoplay>
+  <video id="moodTeaser" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100000;" width="1000" autoplay muted>
     <source src="moodteaser.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <video id="moodTeaserphone" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100000;" width="100%" autoplay>
+  <video id="moodTeaserphone" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100000;" width="100%" autoplay muted>
     <source src="moodteaser.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -956,6 +953,17 @@ body {
       bgMusic.muted = isMuted;
       muteIcon.src = isMuted ? chosenChar.mute : chosenChar.on;
     });
+
+    function setResponsiveBackground() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const bg = width > height ? 'background.png' : 'backgroundphone.png';
+      document.body.style.backgroundImage = `url('${bg}')`;
+    }
+    setResponsiveBackground();
+    window.addEventListener("resize", setResponsiveBackground);
+    window.addEventListener("orientationchange", setResponsiveBackground);
+
 
   </script>
 </body>
